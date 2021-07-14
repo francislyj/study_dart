@@ -37,9 +37,58 @@ void main() {
   myPrint(myList);
 
 
+  Person person = Person();
 
+  printPerson(person);
+
+  print(getData("hello world"));
+}
+
+T getData<T>(T data){
+  return data;
+}
+
+void printPerson(Person person){
+  person?.getName();
+}
+
+
+class Person {
+  String name;
+  int age;
+  Person(): this.age = 2, this.name = "aa";
+
+  String getName (){
+    print("name is ${this.name}");
+    return this.name;
+  }
 }
 
 void myPrint(dynamic data) {
   print(data);
+}
+
+class Dog {
+  String name;
+  int _age;
+
+  Dog(): this.name = "aa", this._age = 3;
+  Dog.info(this.name): this._age = 20;
+
+  String eat() {
+    return "food";
+  }
+
+  void hello(String name,[int sex = 0, int age = 2]){
+
+  }
+
+  get age {
+    return this._age;
+  }
+
+  set infoAge(int value){
+    this._age = value;
+  }
+
 }
